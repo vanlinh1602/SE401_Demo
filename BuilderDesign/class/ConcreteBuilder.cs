@@ -1,10 +1,14 @@
 public interface IBuilder
 {
-    void BuildPartA();
+    void AddMeat();
 
-    void BuildPartB();
+    void AddShrimp();
 
-    void BuildPartC();
+    void AddNoodles();
+
+    void AddSauce();
+
+    void AddVegetables();
 }
 public class ConcreteBuilder : IBuilder
 {
@@ -20,20 +24,29 @@ public class ConcreteBuilder : IBuilder
         this._product = new Product();
     }
 
-
-    public void BuildPartA()
+    public void AddMeat()
     {
-        this._product.Add("PartA1");
+        this._product.Add("Meat");
     }
 
-    public void BuildPartB()
+    public void AddShrimp()
     {
-        this._product.Add("PartB1");
+        this._product.Add("Shrimp");
     }
 
-    public void BuildPartC()
+    public void AddNoodles()
     {
-        this._product.Add("PartC1");
+        this._product.Add("Noodles");
+    }
+
+    public void AddSauce()
+    {
+        this._product.Add("Sauce");
+    }
+
+    public void AddVegetables()
+    {
+        this._product.Add("Vegetables");
     }
 
     public Product GetProduct()

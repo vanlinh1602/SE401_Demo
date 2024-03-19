@@ -7,15 +7,19 @@ public class Director
         set { _builder = value; }
     }
 
-    public void BuildMinimalViableProduct()
+    public void BuildMinimalNoodles()
     {
-        this._builder.BuildPartA();
+        this._builder.AddNoodles();
+        this._builder.AddMeat();
+        this._builder.AddSauce();
     }
 
-    public void BuildFullFeaturedProduct()
+    public void BuildFullNoodles()
     {
-        this._builder.BuildPartA();
-        this._builder.BuildPartB();
-        this._builder.BuildPartC();
+        this._builder.AddNoodles();
+        this._builder.AddMeat();
+        this._builder.AddShrimp();
+        this._builder.AddVegetables();
+        this._builder.AddSauce();
     }
 }

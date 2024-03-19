@@ -18,6 +18,6 @@ public class Product
 
         str = str.Remove(str.Length - 2);
 
-        return "Product parts: " + str + "\n";
+        return "Noodle ingredients: " + str + "\n";
     }
 }
