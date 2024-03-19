@@ -1,7 +1,23 @@
-﻿List<IShape> shapes = new List<IShape>() { new LineAdapter(new LegacyLine()), new RectangleAdapter(new LegacyRectangle()) };
+﻿#region Class Adapter
 
-int x1 = 5, y1 = 10, x2 = -3, y2 = 2;
+ITarget adapter_CA = new ClassAdapter();
 
-shapes.ForEach(shape => shape.Draw(x1, y1, x2, y2));
+// Create a client and pass the adapter to it
+ClientClassAdapter client_CA = new ClientClassAdapter(adapter_CA);
 
+// Make a request using the client
+client_CA.MakeRequest();
 
+#endregion
+
+#region Object Adapter
+Adaptee adaptee = new Adaptee();
+
+// Create an instance of the ObjectAdapter and pass the Adaptee to it
+ITarget adapter_OA = new ObjectAdapter(adaptee);
+
+// Execute the request using the adapter
+ClientObjectAdapter client_OA = new ClientObjectAdapter();
+client_OA.ExecuteRequest(adapter_OA);
+
+#endregion
