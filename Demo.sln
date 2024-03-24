@@ -1,11 +1,14 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdapterDesign", "AdapterDesign\AdapterDesign.csproj", "{63F32FBD-ADD7-485F-9FC4-70C9DBE3AE28}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app", "BuilderDesign\app.csproj", "{F44B9335-E856-4F6E-8417-E4EF84AF17F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuilderDesign", "BuilderDesign\app.csproj", "{F44B9335-E856-4F6E-8417-E4EF84AF17F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompositeDesign", "CompositeDesign\CompositeDesign.csproj", "{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeDesign", "PrototypeDesign\PrototypeDesign.csproj", "{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +24,10 @@ Global
 		{F44B9335-E856-4F6E-8417-E4EF84AF17F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F44B9335-E856-4F6E-8417-E4EF84AF17F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F44B9335-E856-4F6E-8417-E4EF84AF17F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
