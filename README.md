@@ -37,3 +37,17 @@ dotnet run
 cd CompositeDesign
 dotnet run
 ```
+
+### Decorator Design
+
+```
+cd DecoratorDesign
+dotnet run
+```
+
+### Bridge Design
+
+```
+cd BridgeDesign
+dotnet run
+```
