@@ -8,8 +8,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuilderDesign", "BuilderDes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompositeDesign", "CompositeDesign\CompositeDesign.csproj", "{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeDesign", "PrototypeDesign\PrototypeDesign.csproj", "{C7D9A6A1-8C3B-4F4A-9A4B-3C8C6D5E9A2F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
