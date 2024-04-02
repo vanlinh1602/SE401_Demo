@@ -1,61 +1,63 @@
-// Tạo interface send message
-public interface IMessageSender
+using System.Text;
+
+// Tạo interface cho implementor (Payment)
+public interface Payment
 {
-    void SendMessage(string subject, string body);
+    void payWage(int money);
 }
 
-// Concrete Implementor cho send mail
-public class EmailSender : IMessageSender
+// Concrete Implementor CashPayment
+public class CashPayment : Payment
 {
-    public void SendMessage(string subject, string body)
+    public void payWage(int money)
     {
-        Console.WriteLine($"Sending Email\nSubject: {subject}\nBody: {body}");
+        Console.WriteLine($"Trả lương bằng tiền mặt: {money}");
     }
 }
 
-// Concrete Implementor cho send sms
-public class SmsSender : IMessageSender
+// Concrete Implementor BankingPayment
+public class BankingPayment : Payment
 {
-    public void SendMessage(string subject, string body)
+    public void payWage(int money)
     {
-        Console.WriteLine($"Sending SMS\nSubject: {subject}\nBody: {body}");
+        Console.WriteLine($"Trả lương bằng chuyển khoản: {money}");
     }
 }
 
-// Tạo abstract class message
-public abstract class Message
+// Tạo abstract cho abstraction (Staff)
+public abstract class Staff
 {
-    protected IMessageSender _messageSender;
+    protected Payment _payment;
 
-    protected Message(IMessageSender messageSender)
+    public Staff(Payment payment)
     {
-        _messageSender = messageSender;
+        _payment = payment;
     }
 
-    public abstract void Send(string subject, string body);
+    public abstract void payWage(int money);
 }
 
-// Cải tiến abstract cho thông báo hệ thống
-public class SystemAlert : Message
+// Concrete Abstraction ManagerStaff
+public class ManagerStaff : Staff
 {
-    public SystemAlert(IMessageSender messageSender) : base(messageSender) { }
+    public ManagerStaff(Payment payment) : base(payment) { }
 
-    public override void Send(string subject, string body)
+    public override void payWage(int money)
     {
-        Console.WriteLine("System Alert:");
-        _messageSender.SendMessage(subject, body);
+        Console.WriteLine("Quản lý:");
+        _payment.payWage(money);
     }
 }
 
-// Cải tiến abstract cho thông báo người dùng
-public class UserNotification : Message
+// Concrete Abstraction WaiterStaff
+public class WaiterStaff : Staff
 {
-    public UserNotification(IMessageSender messageSender) : base(messageSender) { }
+    public WaiterStaff(Payment payment) : base(payment) { }
 
-    public override void Send(string subject, string body)
+    public override void payWage(int money)
     {
-        Console.WriteLine("User Notification:");
-        _messageSender.SendMessage(subject, body);
+        Console.WriteLine("Phục vụ:");
+        _payment.payWage(money);
     }
 }
 
@@ -63,16 +65,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        IMessageSender emailSender = new EmailSender();
-        IMessageSender smsSender = new SmsSender();
+        Console.OutputEncoding = Encoding.UTF8;
 
-        Message systemAlertEmail = new SystemAlert(emailSender);
-        Message userNotificationSms = new UserNotification(smsSender);
+        Payment cashPayment = new CashPayment();
+        Payment bankingPayment = new BankingPayment();
 
-        // Thông báo hệ thống qua mail
-        systemAlertEmail.Send("System is down", "Please take necessary action!");
-        Console.WriteLine();
-        //Thông báo người dùng qua sms
-        userNotificationSms.Send("New message received", "Please check your inbox!");
+        // Tạo abstraction và gán implementor
+        Staff manager = new ManagerStaff(bankingPayment);
+        // Staff manager = new ManagerStaff(cashPayment);
+        manager.payWage(10000);
+
+        Staff waiter = new WaiterStaff(cashPayment);
+        // Staff waiter = new WaiterStaff(bankingPayment);
+        waiter.payWage(2000);
     }
 }
