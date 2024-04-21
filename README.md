@@ -51,3 +51,17 @@ dotnet run
 cd BridgeDesign
 dotnet run
 ```
+
+### Proxy Design
+
+```
+cd ProxyDesign
+dotnet run
+```
+
+### State Design
+
+```
+cd StateDesign
+dotnet run
+```
