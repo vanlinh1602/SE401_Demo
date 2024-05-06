@@ -65,3 +65,17 @@ dotnet run
 cd StateDesign
 dotnet run
 ```
+
+### Strategy Design
+
+```
+cd StrategyDesign
+dotnet run
+```
+
+### Template Method Design
+
+```
+cd TemplateDesign
+dotnet run
+```
