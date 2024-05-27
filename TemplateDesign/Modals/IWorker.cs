@@ -7,8 +7,8 @@ public abstract class IWorker
         goToWork();
         work();
         goHome();
-        sleep();
         relax();
+        sleep();
     }
 
     public virtual void getUp()
